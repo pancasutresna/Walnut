@@ -66,7 +66,7 @@ namespace Walnut::UI {
 			m_MessageHistory.push_back(MessageInfo(std::string(tag), messageString, color));
 		}
 
-		void OnUIRender();
+		void OnUIRender(std::string username = "");
 
 		void SetMessageSendCallback(const MessageSendCallback& callback);
 	private:

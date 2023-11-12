@@ -16,7 +16,7 @@ namespace Walnut::UI {
 		m_MessageHistory.clear();
 	}
 
-	void Console::OnUIRender()
+	void Console::OnUIRender(std::string username)
 	{
 		ImGui::SetNextWindowSize(ImVec2(520, 600), ImGuiCond_FirstUseEver);
 		if (!ImGui::Begin(m_Title.c_str()))
@@ -40,6 +40,8 @@ namespace Walnut::UI {
 		ImGui::Text("Search");
 		ImGui::SameLine();
 		m_Filter.Draw("##search", 180);
+		ImGui::SameLine();
+		ImGui::Text("Logged in as : %s", username.c_str());
 		ImGui::Separator();
 
 		// Reserve enough left-over height for 1 separator + 1 input text
